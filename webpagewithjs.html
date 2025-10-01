@@ -1,18 +1,49 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Bulb Toggle Demo</title>
+  <style>
+    body {
+      background: #0a6cff;
+      color: #ffffff;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      margin: 24px;
+      line-height: 1.5;
+    }
+    h1 { margin: 0 0 8px; }
+    .byline { margin: 0 0 16px; opacity: 0.9; }
+    button {
+      margin-right: 8px;
+      padding: 6px 10px;
+      border: 0;
+      border-radius: 6px;
+      background: #ffffff;
+      color: #0a6cff;
+      cursor: pointer;
+    }
+    button:hover { background: #eef2ff; }
+  </style>
+  <script>
+    function setBulb(on) {
+      document.getElementById('bulb').src = on ? 'pic_bulbon.gif' : 'pic_bulboff.gif';
+    }
+  </script>
+</head>
 <body>
+  <h1>Interactive Bulb Demo</h1>
+  <p class="byline">Customized by <strong>Abdimalik</strong></p>
 
-<h2>Simple Web Page with HTML and JavaScript</h2>
+  <p>
+    This page is a local HTML file. The buttons below use a small JavaScript
+    function to swap the image’s <code>src</code> between
+    <em>pic_bulbon.gif</em> and <em>pic_bulboff.gif</em>, so you can turn the bulb on and off.
+  </p>
 
-<p>JavaScript can change HTML attribute values.</p>
-
-<p>In this case JavaScript changes the value of the src (source) attribute of an image.</p>
-
-<button onclick="document.getElementById('myImage').src='pic_bulbon.gif'">Turn on the light</button>
-
-<img id="myImage" src="pic_bulboff.gif" style="width:100px">
-
-<button onclick="document.getElementById('myImage').src='pic_bulboff.gif'">Turn off the light</button>
-
+  <img id="bulb" src="pic_bulboff.gif" alt="Light bulb" width="150">
+  <div>
+    <button onclick="setBulb(true)">Turn on</button>
+    <button onclick="setBulb(false)">Turn off</button>
+  </div>
 </body>
 </html>
